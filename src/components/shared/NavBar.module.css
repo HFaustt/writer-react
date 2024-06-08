@@ -1,0 +1,44 @@
+.navItems {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  border-radius: 100%;
+}
+
+.logo :hover {
+  transform: scale(1.1);
+  transition: all, ease-in-out, 0.2s;
+}
+
+.navList {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.navItems li {
+  list-style: none;
+}
+
+.navItems a {
+  color: black;
+  text-decoration: none;
+}
+
+.navItems a:hover {
+  font-size: 20px;
+  transition: all, ease-in-out, 0.2s;
+}
+
+.navItems a.active {
+  text-decoration: underline;
+  font-size: 20px;
+}
