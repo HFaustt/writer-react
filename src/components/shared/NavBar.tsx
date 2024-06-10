@@ -2,6 +2,7 @@ import { Link, NavLink } from "react-router-dom";
 import styles from "./NavBar.module.css";
 import { useMediaQuery } from "@mui/material";
 import MobileNav from "./MobileNav";
+import SocialMediaIcons from "./SocialMediaIcons";
 
 export default function NavBar() {
   function activeStyle({ isActive }: { isActive: boolean }) {
@@ -41,6 +42,7 @@ export default function NavBar() {
               </NavLink>
             </li>
           </ul>
+          <SocialMediaIcons />
         </nav>
       )}
     </>

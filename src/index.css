@@ -1,6 +1,9 @@
 * {
   margin: 0;
   line-height: calc(1em + 0.5rem);
+  background-color: #f8e3d2;
+  /* OR THIS */
+  /* background-color: #ece0d0; */
 }
 
 html {
@@ -8,7 +11,7 @@ html {
 }
 
 body {
-  font-family: "General Sans", sans-serif;
+  font-family: "Eczar", serif;
   background-color: var(--clr-dark);
   color: var(--clr-light);
 }

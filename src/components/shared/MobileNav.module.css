@@ -14,15 +14,20 @@
   margin-right: auto;
 }
 
+.icons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+}
+
 .mobileNavItems {
   display: none;
   flex-direction: column;
   padding: 10px 5px;
   position: absolute;
-  top: 7px;
-  right: 25px;
-  background: white;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  top: -3px;
+  right: 30px;
   width: auto;
 }
 
@@ -54,12 +59,3 @@
 .logo img {
   border-radius: 100%;
 }
-
-/* .mobileNavItems {
-    display: none;
-    flex-direction: column;
-    padding: 10px 5px;
-    position: absolute;
-    top: 20px;
-    right: 100%;
-  } */

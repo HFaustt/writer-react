@@ -3,6 +3,7 @@ import styles from "./MobileNav.module.css";
 import MenuIcon from "@mui/icons-material/Menu";
 import MenuOpenIcon from "@mui/icons-material/MenuOpen";
 import { Link, NavLink } from "react-router-dom";
+import SocialMediaIcons from "./SocialMediaIcons";
 
 export default function MobileNav() {
   const [isOpen, setIsOpen] = useState(false);
@@ -12,6 +13,11 @@ export default function MobileNav() {
       <Link to="/about" className={styles.logo}>
         <img src="logo.jpeg" alt="logo" height={30} width={30} />
       </Link>
+
+      <div className={styles.icons}>
+        <SocialMediaIcons />
+      </div>
+
       {isOpen ? (
         <>
           <MenuOpenIcon onClick={() => setIsOpen(false)} />
