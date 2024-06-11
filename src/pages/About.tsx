@@ -1,40 +1,15 @@
-import MediaQueries from "../helpers/MediaQueries";
+import {
+  useMediaQueries,
+  imgStyle,
+  svgStyle,
+  iconStyle,
+} from "../helpers/MediaQueries";
 import styles from "./About.module.css";
 import HdrWeakIcon from "@mui/icons-material/HdrWeak";
 
 export default function About() {
+  const mediaQueries = useMediaQueries();
   const currentYear = new Date().getFullYear();
-  const { isLargeScreen, isMediumScreen, isSmallScreen, isXSmallScreen } =
-    MediaQueries();
-
-  function imgStyle() {
-    if (isLargeScreen) {
-      return {
-        width: 550,
-        height: "auto",
-      };
-    } else if (isMediumScreen) {
-      return {
-        width: 500,
-        height: "auto",
-      };
-    } else if (isSmallScreen) {
-      return {
-        width: 400,
-        height: "auto",
-      };
-    } else if (isXSmallScreen) {
-      return {
-        width: 380,
-        height: "auto",
-      };
-    } else {
-      return {
-        width: "auto",
-        height: "auto",
-      };
-    }
-  }
 
   return (
     <>
@@ -42,15 +17,7 @@ export default function About() {
         <div className={styles.leftHalf}>
           <HdrWeakIcon
             className={styles.icon}
-            fontSize={`${
-              isLargeScreen
-                ? "medium"
-                : isMediumScreen
-                ? "medium"
-                : isSmallScreen || isXSmallScreen
-                ? "small"
-                : "large"
-            }`}
+            fontSize={iconStyle(mediaQueries)}
           />
           <h1 className={styles.header}>H.FAUST</h1>
           <p className={styles.text}>
@@ -67,7 +34,7 @@ export default function About() {
             src="/about.png"
             alt="about me picture"
             className={styles.img}
-            style={imgStyle()}
+            style={imgStyle(mediaQueries)}
           />
         </div>
       </div>
@@ -75,12 +42,7 @@ export default function About() {
         <img
           src="/glasses.png"
           alt="glasses"
-          height={
-            isMediumScreen ? 50 : isSmallScreen ? 30 : isXSmallScreen ? 29 : 70
-          }
-          width={
-            isMediumScreen ? 50 : isSmallScreen ? 30 : isXSmallScreen ? 29 : 70
-          }
+          style={svgStyle(mediaQueries)}
           className={styles.svg}
         />
         <p>H.Faust © {currentYear}. All rights reserved.</p>

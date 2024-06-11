@@ -1,10 +1,10 @@
 import { Outlet } from "react-router-dom";
 import NavBar from "./NavBar";
 import styles from "./AppLayout.module.css";
-import MediaQueries from "../../helpers/MediaQueries";
+import { useMediaQueries } from "../../helpers/MediaQueries";
 
 export default function AppLayout() {
-  const { isMediumScreen } = MediaQueries();
+  const { isMediumScreen } = useMediaQueries();
   return (
     <div className={styles.container}>
       <header
