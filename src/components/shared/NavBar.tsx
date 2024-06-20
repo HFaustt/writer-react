@@ -1,4 +1,4 @@
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import styles from "./NavBar.module.css";
 import { useMediaQuery } from "@mui/material";
 import MobileNav from "./MobileNav";
@@ -10,6 +10,7 @@ export default function NavBar() {
   }
 
   const isMobile = useMediaQuery("(max-width: 768px)");
+  const location = useLocation();
 
   return (
     <>
@@ -18,7 +19,14 @@ export default function NavBar() {
       ) : (
         <nav className={styles.navItems}>
           <Link to="/about" className={styles.logo}>
-            <img src="logo.jpeg" alt="logo" height={40} width={40} />
+            <img
+              src={
+                location.pathname === "/" ? "/logoWhite.png" : "/logoBlack.png"
+              }
+              alt="logo"
+              height={40}
+              width={40}
+            />
           </Link>
           <ul className={styles.navList}>
             <li>

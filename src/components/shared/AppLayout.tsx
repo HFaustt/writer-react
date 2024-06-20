@@ -7,11 +7,11 @@ export default function AppLayout() {
   const { isMediumScreen } = useMediaQueries();
   return (
     <div className={styles.container}>
-      <header
+      <nav
         className={isMediumScreen ? styles.headerMobile : styles.headerDesktop}
       >
         <NavBar />
-      </header>
+      </nav>
       <main className={styles.main}>
         <Outlet />
       </main>

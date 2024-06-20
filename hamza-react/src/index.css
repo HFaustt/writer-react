@@ -1,0 +1,22 @@
+* {
+  margin: 0;
+  line-height: calc(1em + 0.5rem);
+  background-color: #dcd7d0;
+  /* OR THIS */
+  /* background-color: #ece0d0; */
+  /* background-color: #f8e3d2; */
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Eczar", serif;
+  background-color: var(--clr-dark);
+  color: var(--clr-light);
+}
+
+nav {
+  z-index: 50;
+}

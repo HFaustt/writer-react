@@ -1,0 +1,168 @@
+.container {
+  display: flex;
+  height: 92vh;
+  width: 100.8vw;
+  background: transparent;
+}
+
+.imgContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+  background: transparent;
+  flex-grow: 1;
+}
+
+.img {
+  background: transparent;
+}
+
+.leftHalf,
+.rightHalf {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50%;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  left: 10;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+  background: transparent;
+}
+
+.svg {
+  background: transparent;
+}
+
+@media (min-width: 576px) {
+  .header {
+    font-size: 4rem;
+    letter-spacing: 0.5rem;
+    margin: 10rem 0 5px 1rem;
+    font-weight: 300;
+    background: none;
+  }
+
+  .text {
+    font-size: 12px;
+    margin-left: 10px;
+  }
+
+  .footer p {
+    font-size: 12px;
+    font-family: "Courier New", Courier, monospace;
+    background: transparent;
+  }
+}
+
+/* sm */
+@media (min-width: 640px) {
+  .header {
+    font-size: 4rem;
+    letter-spacing: 1.2rem;
+    margin: 12rem 0 5px 0;
+    font-weight: 300;
+    background: none;
+  }
+
+  .text {
+    font-size: 15px;
+    padding-right: 1rem;
+  }
+
+  .footer p {
+    font-size: 12px;
+    font-family: "Courier New", Courier, monospace;
+  }
+}
+
+/* md */
+@media (min-width: 768px) {
+  .header {
+    font-size: 3.7rem;
+    letter-spacing: 1.3rem;
+    margin: 12rem 0 5px 0;
+    font-weight: 300;
+    background: none;
+  }
+
+  .text {
+    font-size: 13px;
+  }
+
+  .footer p {
+    font-size: 13px;
+    font-family: "Courier New", Courier, monospace;
+  }
+}
+
+/* lg */
+@media (min-width: 1024px) {
+  .header {
+    font-size: 5rem;
+    letter-spacing: 1.5rem;
+    margin: 5rem 0 5px 3rem;
+    font-weight: 300;
+    background: none;
+  }
+
+  .text {
+    font-size: 16px;
+    margin-left: 6rem;
+  }
+
+  .footer p {
+    font-size: 14px;
+    font-family: "Courier New", Courier, monospace;
+  }
+}
+
+/* xl */
+@media (min-width: 1280px) {
+  .header {
+    font-size: 9rem;
+    letter-spacing: 1.8rem;
+    font-weight: 300;
+    margin: 11rem 0 5px 2rem;
+    background: none;
+  }
+
+  .text {
+    font-size: 18px;
+    margin-left: 8rem;
+  }
+
+  .footer p {
+    font-size: 14px;
+    font-family: "Courier New", Courier, monospace;
+  }
+}
+
+/* 2xl */
+@media (min-width: 1600px) {
+  .header {
+    font-size: 11rem;
+    letter-spacing: 3rem;
+    margin: 13rem 0 5px 2rem;
+    font-weight: 300;
+    background: none;
+  }
+
+  .text {
+    font-size: 22px;
+    margin-top: 1rem;
+    padding: 0 3rem;
+  }
+
+  .footer p {
+    font-size: 15px;
+    font-family: "Courier New", Courier, monospace;
+  }
+}

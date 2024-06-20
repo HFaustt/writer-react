@@ -1,0 +1,112 @@
+.container {
+  display: flex;
+  height: 90vh;
+  background: transparent;
+}
+
+.divContainer {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.leftHalf {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 56%;
+  height: 100%;
+  display: flex;
+  background-image: url("/home.webp");
+  background-size: cover;
+
+  background-position: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.rightHalf {
+  display: flex;
+  width: 40%;
+  margin-top: 10rem;
+  flex-direction: column;
+  background: transparent;
+}
+
+.leftHeader {
+  background: transparent;
+  font-weight: normal;
+  color: aliceblue;
+  font-size: 5rem;
+}
+
+.footer {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+  background: transparent;
+}
+
+.footer p {
+  background: transparent;
+  color: aliceblue;
+}
+
+.svg {
+  background: transparent;
+}
+
+.upperText {
+  font-size: 13px;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.rightHeader {
+  font-size: 4rem;
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.rightHeader strong {
+  font-size: 5rem;
+  background: transparent;
+  padding: 0 10px;
+}
+
+.lowerText p {
+  font-size: 14px;
+  text-align: center;
+}
+
+.lowerText blockquote {
+  font-size: 12px;
+  background: transparent;
+  margin-top: 10px;
+}
+/* xs */
+@media (min-width: 576px) {
+}
+
+/* sm */
+@media (min-width: 640px) {
+}
+
+/* md */
+@media (min-width: 768px) {
+}
+
+/* lg */
+@media (min-width: 1024px) {
+}
+
+/* xl */
+@media (min-width: 1280px) {
+}
+
+/* 2xl */
+@media (min-width: 1600px) {
+}

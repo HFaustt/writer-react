@@ -1,4 +1,50 @@
-// import styles from "./Home.module.css";
+import { svgStyle, useMediaQueries } from "../helpers/MediaQueries";
+import styles from "./Home.module.css";
+
 export default function Home() {
-  return <div>Home</div>;
+  const mediaQueries = useMediaQueries();
+  const currentYear = new Date().getFullYear();
+
+  return (
+    <div className={styles.container}>
+      <div className={styles.divContainer}>
+        <div className={styles.leftHalf}>
+          <h1 className={styles.leftHeader}>WRITER'S HOME</h1>
+          <footer className={styles.footer}>
+            <img
+              src="/whiteGlasses.png"
+              alt="glasses"
+              style={svgStyle(mediaQueries)}
+              className={styles.svg}
+            />
+            <p>H.Faust © {currentYear}. All rights reserved</p>
+          </footer>
+        </div>
+        <div className={styles.rightHalf}>
+          <p className={styles.upperText}>
+            Nisi minus suscipit alias neque tempore <br />
+            necessitatibus ipsam cupiditate repudiandae cum vel atque,
+            <br />
+            laudantium quod adipisci
+          </p>
+          <h2 className={styles.rightHeader}>
+            Meet <br /> <strong> The Writer </strong>
+          </h2>
+          <div className={styles.lowerText}>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta
+              laudantium neque aliquam. Aliquam, commodi ex rerum beatae
+              quisquam perspiciatis magnam deleniti ullam. Repudiandae,
+              doloremque officia,
+              <br />
+              <blockquote>
+                - Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Similique, cupiditate.
+              </blockquote>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 }
