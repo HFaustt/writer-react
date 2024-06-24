@@ -13,7 +13,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  width: 56%;
+  width: 55%;
   height: 100%;
   display: flex;
   background-image: url("/home.webp");
@@ -77,15 +77,14 @@
   padding: 0 10px;
 }
 
-.lowerText p {
+.lowerText {
   font-size: 14px;
   text-align: center;
 }
 
-.lowerText blockquote {
+.blockquote {
   font-size: 12px;
   background: transparent;
-  margin-top: 10px;
 }
 /* xs */
 @media (min-width: 576px) {
@@ -109,4 +108,9 @@
 
 /* 2xl */
 @media (min-width: 1600px) {
+  .divContainer {
+    display: flex;
+    justify-content: flex-end;
+    margin-left: 15rem;
+  }
 }

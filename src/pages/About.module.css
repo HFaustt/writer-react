@@ -147,6 +147,12 @@
 
 /* 2xl */
 @media (min-width: 1600px) {
+  .container {
+    display: flex;
+    height: 95vh;
+    width: 100.8vw;
+    background: transparent;
+  }
   .header {
     font-size: 11rem;
     letter-spacing: 3rem;

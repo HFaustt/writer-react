@@ -1,6 +1,8 @@
 import { svgStyle, useMediaQueries } from "../helpers/MediaQueries";
 import styles from "./Home.module.css";
 
+//TODO: Make the page responsive
+
 export default function Home() {
   const mediaQueries = useMediaQueries();
   const currentYear = new Date().getFullYear();
@@ -30,17 +32,17 @@ export default function Home() {
           <h2 className={styles.rightHeader}>
             Meet <br /> <strong> The Writer </strong>
           </h2>
-          <div className={styles.lowerText}>
-            <p>
+          <div>
+            <p className={styles.lowerText}>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta
               laudantium neque aliquam. Aliquam, commodi ex rerum beatae
               quisquam perspiciatis magnam deleniti ullam. Repudiandae,
               doloremque officia,
               <br />
-              <blockquote>
+              <span className={styles.blockquote}>
                 - Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Similique, cupiditate.
-              </blockquote>
+              </span>
             </p>
           </div>
         </div>
