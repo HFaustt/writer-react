@@ -16,7 +16,7 @@ export default function NavBar() {
   const location = useLocation();
 
   const { user } = useAuth0();
-  console.log(user);
+  // console.log(user);
 
   return (
     <>
