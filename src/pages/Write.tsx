@@ -15,7 +15,6 @@ export default function Write() {
           onInit={(_evt, editor) => {
             editorRef.current = editor;
           }}
-          initialValue="<p>Take it away champ...</p>"
           init={{
             height: 700,
             menubar: true,
