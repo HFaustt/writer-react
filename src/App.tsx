@@ -1,15 +1,19 @@
 import { Route, Routes } from "react-router-dom";
 import AppLayout from "./components/shared/AppLayout";
-import Home from "./pages/Home";
-import About from "./pages/About";
-import Write from "./pages/Write";
+import Home from "./pages/home/Home";
+import About from "./pages/about/About";
 import Error from "./components/shared/Error";
-import Read from "./pages/Read";
+import Read from "./pages/read/Read";
 import { Suspense } from "react";
-import CallbackPage from "./pages/CallbackPage";
+import CallbackPage from "./pages/callback/CallbackPage";
 import { useAuth0 } from "@auth0/auth0-react";
 import { AuthenticationGuard } from "./auth/AuthenticationGuard";
 import Loader from "./components/shared/Loader";
+import StoriesPage from "./pages/read/stories/StoriesPage";
+import BlogsPage from "./pages/read/blogs/BlogsPage";
+import StoryPage from "./pages/read/stories/story/StoryPage";
+import Blogpage from "./pages/read/blogs/blog/Blogpage";
+import Write from "./pages/write/Write";
 
 // const router = createBrowserRouter([
 //   {
@@ -56,7 +60,13 @@ function App() {
             path="write"
             element={<AuthenticationGuard component={Write} />}
           />
+
           <Route path="read" element={<Read />} />
+          <Route path="/read/stories" element={<StoriesPage />} />
+          <Route path="/read/stories/:id" element={<StoryPage />} />
+          <Route path="/read/blogs" element={<BlogsPage />} />
+          <Route path="/read/blogs/:id" element={<Blogpage />} />
+
           <Route path="callback" element={<CallbackPage />} />
           <Route path="*" element={<Error />} />
         </Route>
@@ -64,4 +74,5 @@ function App() {
     </Suspense>
   );
 }
+
 export default App;

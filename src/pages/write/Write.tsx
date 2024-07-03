@@ -3,12 +3,13 @@ import { Editor } from "@tinymce/tinymce-react";
 import { Editor as TinyMCEEditor } from "tinymce";
 import styles from "./Write.module.css";
 import { push, ref, set } from "firebase/database";
-import { db, storage } from "../lib/firebaserConfig";
+
 import {
   getDownloadURL,
   ref as storageRef,
   uploadBytes,
 } from "firebase/storage";
+import { db, storage } from "../../lib/firebaserConfig";
 
 export default function Write() {
   const apiKey = import.meta.env.VITE_TINYMCE_API_KEY as string;

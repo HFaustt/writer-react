@@ -1,4 +1,8 @@
-import { useMediaQueries, imgStyle, svgStyle } from "../helpers/MediaQueries";
+import {
+  useMediaQueries,
+  imgStyle,
+  svgStyle,
+} from "../../helpers/MediaQueries";
 import styles from "./About.module.css";
 
 export default function About() {

@@ -64,7 +64,9 @@ export default function NavBar() {
 
           <AuthButtons />
 
-          <SocialMediaIcons />
+          <div className={styles.socialMediaIcons}>
+            <SocialMediaIcons />
+          </div>
         </nav>
       )}
     </>

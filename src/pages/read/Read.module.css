@@ -1,0 +1,44 @@
+.container {
+  display: flex;
+  height: 90vh;
+}
+
+.leftHalf {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  background-image: url("/home.webp");
+  background-size: cover;
+  background-position: center;
+  align-items: center;
+  justify-content: center;
+  transition: all 1s ease-in-out;
+}
+
+.rightHalf {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  background-image: url("/home.webp");
+  background-size: cover;
+  background-position: center;
+  align-items: center;
+  justify-content: center;
+  transition: all 1s ease-in-out;
+}
+
+.leftHalf:hover {
+  scale: 1.1;
+  transition: all 1s ease-in-out;
+}
+
+.rightHalf:hover {
+  scale: 1.1;
+  transition: all 1s ease-in-out;
+}

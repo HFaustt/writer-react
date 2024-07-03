@@ -1,4 +1,4 @@
-import { svgStyle, useMediaQueries } from "../helpers/MediaQueries";
+import { svgStyle, useMediaQueries } from "../../helpers/MediaQueries";
 import styles from "./Home.module.css";
 
 //TODO: Make the page responsive

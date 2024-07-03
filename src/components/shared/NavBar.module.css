@@ -15,6 +15,7 @@
 .logo img {
   border-radius: 100%;
   background: transparent;
+  transition: all, ease-in-out, 0.2s;
 }
 
 .logo :hover {
@@ -39,6 +40,7 @@
   color: black;
   text-decoration: none;
   background: transparent;
+  transition: all, ease-in-out, 0.2s;
 }
 
 .navItems a:hover {
@@ -53,4 +55,8 @@
   font-weight: 500;
   background: transparent;
   text-underline-offset: 5px;
+}
+
+.socialMediaIcons {
+  background: transparent;
 }
