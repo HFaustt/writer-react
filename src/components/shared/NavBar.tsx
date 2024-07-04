@@ -4,7 +4,7 @@ import { useMediaQuery } from "@mui/material";
 import MobileNav from "./MobileNav";
 import SocialMediaIcons from "./SocialMediaIcons";
 import { useAuth0 } from "@auth0/auth0-react";
-import AuthButtons from "./AuthButtons";
+import NavAuthButtons from "./NavAuthButtons";
 
 export default function NavBar() {
   function activeStyle({ isActive }: { isActive: boolean }) {
@@ -16,7 +16,6 @@ export default function NavBar() {
   const location = useLocation();
 
   const { user } = useAuth0();
-  // console.log(user);
 
   return (
     <>
@@ -48,13 +47,13 @@ export default function NavBar() {
                 Home
               </NavLink>
             </li>
-            {/* <li>
-              {isAuthenticated && (
+            {/* {isAuthenticated && (
+              <li>
                 <NavLink to="/write" className={activeStyle}>
                   Write
                 </NavLink>
-              )}
-            </li> */}
+              </li>
+            )} */}
             <li>
               <NavLink to="/read" className={activeStyle}>
                 Read
@@ -62,7 +61,7 @@ export default function NavBar() {
             </li>
           </ul>
 
-          <AuthButtons />
+          <NavAuthButtons />
 
           <div className={styles.socialMediaIcons}>
             <SocialMediaIcons />

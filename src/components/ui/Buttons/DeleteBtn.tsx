@@ -8,7 +8,11 @@ function DeleteBtn({ id, onDelete }: deleteBtnProps) {
       console.error("ID is undefined");
     }
   };
-  return <button onClick={handleDelete}>Delete post</button>;
+  return (
+    <button onClick={handleDelete} style={{ cursor: "pointer" }}>
+      Delete post
+    </button>
+  );
 }
 
 export default DeleteBtn;

@@ -36,9 +36,13 @@ function StoryPage() {
     navigate("/read/blogs");
   }
 
+  function onGoingBack() {
+    navigate(-1);
+  }
+
   return (
     <div>
-      <GoBackBtn />
+      <GoBackBtn onClick={onGoingBack} />
       <div>blog ID: {blogId}</div>
       <h2>{blog.title}</h2>
       {blog.heroImage && (

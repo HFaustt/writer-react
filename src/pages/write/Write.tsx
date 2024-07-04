@@ -18,6 +18,7 @@ export default function Write() {
   const [title, setTitle] = useState<string>("");
   const [author, setAuthor] = useState<string>("");
   const [heroImage, setHeroImage] = useState<File | string>("");
+  const [loading, setLoading] = useState<boolean>(false);
 
   useEffect(() => {
     if (editorRef.current) {
@@ -52,6 +53,7 @@ export default function Write() {
     if (editorRef.current) {
       const currentContent = editorRef.current.getContent().trim();
       if (currentContent) {
+        setLoading(true);
         let imageUrl = "";
         if (heroImage instanceof File) {
           imageUrl = await handleStoryImageUpload(heroImage);
@@ -66,6 +68,7 @@ export default function Write() {
 
         alert("Story saved successfully!");
         handleResetContent();
+        setLoading(false);
       } else {
         alert("Please write something before saving.");
       }
@@ -76,6 +79,7 @@ export default function Write() {
     if (editorRef.current) {
       const currentContent = editorRef.current.getContent().trim();
       if (currentContent) {
+        setLoading(true);
         let imageUrl = "";
         if (heroImage instanceof File) {
           imageUrl = await handleBlogImageUpload(heroImage);
@@ -90,6 +94,7 @@ export default function Write() {
 
         alert("Blog saved successfully!");
         handleResetContent();
+        setLoading(false);
       } else {
         alert("Please write something before saving.");
       }
@@ -99,74 +104,88 @@ export default function Write() {
   return (
     <div className={styles.container}>
       <section>
-        <input
-          type="text"
-          placeholder="Title"
-          className={styles.titleInput}
-          id="title"
-          value={title}
-          onChange={(e) => setTitle(e.target.value)}
-        />
-        <input
-          type="text"
-          placeholder="Author"
-          className={styles.authorInput}
-          id="author"
-          value={author}
-          onChange={(e) => setAuthor(e.target.value)}
-        />
-        <input
-          type="file"
-          className={styles.imageInput}
-          id="image"
-          onChange={(e) => {
-            if (e.target.files && e.target.files[0]) {
-              setHeroImage(e.target.files[0]);
-            }
-          }}
-        />
-
-        <Editor
-          apiKey={apiKey}
-          onInit={(_evt, editor) => {
-            editorRef.current = editor;
-          }}
-          onEditorChange={(newContent) => setContent(newContent)}
-          init={{
-            height: 700,
-            menubar: true,
-            plugins: [
-              "advlist",
-              "anchor",
-              "autolink",
-              "charmap",
-              "code",
-              "fullscreen",
-              "help",
-              "image",
-              "insertdatetime",
-              "link",
-              "lists",
-              "media",
-              "preview",
-              "searchreplace",
-              "table",
-              "visualblocks",
-              "wordcount",
-            ],
-            toolbar:
-              "styles| bold italic underline strikethrough | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image",
-            content_style:
-              "body { font-family:Eczar,Arial,sans-serif; font-size:14px;}",
-          }}
-        />
+        <div className={styles.inputs}>
+          <input
+            type="text"
+            placeholder="Title"
+            className={styles.titleInput}
+            id="title"
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
+          />
+          <input
+            type="text"
+            placeholder="Author"
+            className={styles.authorInput}
+            id="author"
+            value={author}
+            onChange={(e) => setAuthor(e.target.value)}
+          />
+          <input
+            type="file"
+            className={styles.imageInput}
+            id="image"
+            onChange={(e) => {
+              if (e.target.files && e.target.files[0]) {
+                setHeroImage(e.target.files[0]);
+              }
+            }}
+          />
+        </div>
+        <div className={styles.editor}>
+          <Editor
+            apiKey={apiKey}
+            onInit={(_evt, editor) => {
+              editorRef.current = editor;
+            }}
+            onEditorChange={(newContent) => setContent(newContent)}
+            init={{
+              height: 650,
+              menubar: true,
+              plugins: [
+                "advlist",
+                "anchor",
+                "autolink",
+                "charmap",
+                "code",
+                "fullscreen",
+                "help",
+                "image",
+                "insertdatetime",
+                "link",
+                "lists",
+                "media",
+                "preview",
+                "searchreplace",
+                "table",
+                "visualblocks",
+                "wordcount",
+              ],
+              toolbar:
+                "styles| bold italic underline strikethrough | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image",
+              content_style:
+                "body { font-family:Eczar,Arial,sans-serif; font-size:14px;}",
+            }}
+          />
+        </div>
       </section>
-      <button onClick={handleSaveStory} style={{ cursor: "pointer" }}>
-        Save Story
-      </button>
-      <button onClick={handleSaveBlog} style={{ cursor: "pointer" }}>
-        Save Blog
-      </button>
+      <div className={styles.buttons}>
+        <button
+          onClick={handleSaveStory}
+          style={{ cursor: "pointer" }}
+          disabled={loading}
+        >
+          Save Story
+        </button>
+
+        <button
+          onClick={handleSaveBlog}
+          style={{ cursor: "pointer" }}
+          disabled={loading}
+        >
+          Save Blog
+        </button>
+      </div>
     </div>
   );
 }

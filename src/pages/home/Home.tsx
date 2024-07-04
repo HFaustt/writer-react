@@ -1,3 +1,5 @@
+import { useNavigate } from "react-router-dom";
+import ReadButton from "../../components/ui/Buttons/ReadButtons";
 import { svgStyle, useMediaQueries } from "../../helpers/MediaQueries";
 import styles from "./Home.module.css";
 
@@ -6,6 +8,7 @@ import styles from "./Home.module.css";
 export default function Home() {
   const mediaQueries = useMediaQueries();
   const currentYear = new Date().getFullYear();
+  const navigate = useNavigate();
 
   return (
     <div className={styles.container}>
@@ -32,6 +35,25 @@ export default function Home() {
           <h2 className={styles.rightHeader}>
             Meet <br /> <strong> The Writer </strong>
           </h2>
+
+          <div className={styles.readButtons}>
+            <ReadButton
+              onClick={() => {
+                navigate("/read/stories");
+              }}
+            >
+              Read Stories
+            </ReadButton>
+
+            <ReadButton
+              onClick={() => {
+                navigate("/read/blogs");
+              }}
+            >
+              Read Blogs
+            </ReadButton>
+          </div>
+
           <div>
             <p className={styles.lowerText}>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta

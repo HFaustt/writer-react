@@ -1,11 +1,9 @@
 import { useAuth0 } from "@auth0/auth0-react";
 
 import styles from "./NavBarButtons.module.css";
-import SignupBtn from "../ui/Buttons/SignupBtn";
-import LoginBtn from "../ui/Buttons/LoginBtn";
-import LogoutBtn from "../ui/Buttons/LogoutBtn";
+import { LoginBtn, LogoutBtn, SignupBtn } from "../ui/Buttons/AuthButtons";
 
-function AuthButtons() {
+function NavAuthButtons() {
   const { isAuthenticated } = useAuth0();
   return (
     <div>
@@ -24,4 +22,4 @@ function AuthButtons() {
   );
 }
 
-export default AuthButtons;
+export default NavAuthButtons;
