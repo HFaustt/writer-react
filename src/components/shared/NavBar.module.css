@@ -6,6 +6,10 @@
   position: relative;
   z-index: 10;
 }
+.name {
+  font-size: 10px;
+  background: transparent;
+}
 
 .logo {
   display: flex;

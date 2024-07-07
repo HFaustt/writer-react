@@ -3,8 +3,8 @@ import styles from "./NavBar.module.css";
 import { useMediaQuery } from "@mui/material";
 import MobileNav from "./MobileNav";
 import SocialMediaIcons from "./SocialMediaIcons";
-import { useAuth0 } from "@auth0/auth0-react";
 import NavAuthButtons from "./NavAuthButtons";
+import { useAuth } from "../../auth/context/FirebaseAuth";
 
 export default function NavBar() {
   function activeStyle({ isActive }: { isActive: boolean }) {
@@ -14,8 +14,7 @@ export default function NavBar() {
   const isMobile = useMediaQuery("(max-width: 768px)");
 
   const location = useLocation();
-
-  const { user } = useAuth0();
+  const { userName, currentUser } = useAuth();
 
   return (
     <>
@@ -34,7 +33,7 @@ export default function NavBar() {
             />
           </Link>
 
-          {user ? user.nickname : ""}
+          {currentUser && <p className={styles.name}>{userName}</p>}
 
           <ul className={styles.navList}>
             <li>
@@ -47,13 +46,13 @@ export default function NavBar() {
                 Home
               </NavLink>
             </li>
-            {/* {isAuthenticated && (
-              <li>
-                <NavLink to="/write" className={activeStyle}>
-                  Write
-                </NavLink>
-              </li>
-            )} */}
+
+            <li>
+              <NavLink to="/write" className={activeStyle}>
+                Write
+              </NavLink>
+            </li>
+
             <li>
               <NavLink to="/read" className={activeStyle}>
                 Read

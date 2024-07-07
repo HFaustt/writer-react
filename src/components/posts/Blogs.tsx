@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { get, ref } from "firebase/database";
 import { BlogPost } from "../../types";
-import { db } from "../../lib/firebaserConfig";
+import { db } from "../../lib/firebaseConfig";
 import ParseHTML from "../ParseHTML";
 import { Link } from "react-router-dom";
 

@@ -4,14 +4,14 @@ import App from "./App.tsx";
 import "./modern-normalize.css";
 import "./index.css";
 import { BrowserRouter } from "react-router-dom";
-import Auth0ProviderWithNavigate from "./auth/Auth0Provider.tsx";
+import { AuthProvider } from "./auth/context/FirebaseAuth.tsx";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <BrowserRouter>
-      <Auth0ProviderWithNavigate>
+      <AuthProvider>
         <App />
-      </Auth0ProviderWithNavigate>
+      </AuthProvider>
     </BrowserRouter>
   </React.StrictMode>
 );

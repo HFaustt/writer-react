@@ -1,19 +1,17 @@
-import { useAuth0 } from "@auth0/auth0-react";
-
 import styles from "./NavBarButtons.module.css";
-import { LoginBtn, LogoutBtn, SignupBtn } from "../ui/Buttons/AuthButtons";
+import { LoginBtn, LogoutBtn } from "../ui/Buttons/AuthButtons";
+import { useAuth } from "../../auth/context/FirebaseAuth";
 
 function NavAuthButtons() {
-  const { isAuthenticated } = useAuth0();
+  const { currentUser } = useAuth();
   return (
     <div>
-      {!isAuthenticated && (
+      {!currentUser && (
         <div className={styles.btns}>
-          <SignupBtn />
           <LoginBtn />
         </div>
       )}
-      {isAuthenticated && (
+      {currentUser && (
         <>
           <LogoutBtn />
         </>

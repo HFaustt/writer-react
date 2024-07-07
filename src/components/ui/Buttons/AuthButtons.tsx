@@ -1,59 +1,22 @@
-import { useAuth0 } from "@auth0/auth0-react";
+import { useNavigate } from "react-router-dom";
+import { useAuth } from "../../../auth/context/FirebaseAuth";
 
 function LoginBtn() {
-  const { loginWithRedirect } = useAuth0();
-
-  async function handleLogin() {
-    await loginWithRedirect({
-      appState: {
-        returnTo: "/",
-      },
-    });
-  }
+  const navigate = useNavigate();
   return (
-    <button onClick={handleLogin} style={{ cursor: "pointer" }}>
+    <button onClick={() => navigate("login")} style={{ cursor: "pointer" }}>
       Log in
     </button>
   );
 }
 
 function LogoutBtn() {
-  const { logout } = useAuth0();
-
-  function handleLogout() {
-    logout({
-      logoutParams: {
-        returnTo: window.location.origin,
-      },
-    });
-  }
-
+  const { signOut } = useAuth();
   return (
-    <button style={{ cursor: "pointer" }} onClick={handleLogout}>
+    <button style={{ cursor: "pointer" }} onClick={signOut}>
       Log Out
     </button>
   );
 }
 
-function SignupBtn() {
-  const { loginWithRedirect } = useAuth0();
-
-  async function handleSignUp() {
-    await loginWithRedirect({
-      appState: {
-        returnTo: "/",
-      },
-      authorizationParams: {
-        screen_hint: "signup",
-      },
-    });
-  }
-
-  return (
-    <button style={{ cursor: "pointer" }} onClick={handleSignUp}>
-      Sign Up
-    </button>
-  );
-}
-
-export { LoginBtn, LogoutBtn, SignupBtn };
+export { LoginBtn, LogoutBtn };

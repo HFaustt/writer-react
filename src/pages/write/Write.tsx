@@ -9,7 +9,7 @@ import {
   ref as storageRef,
   uploadBytes,
 } from "firebase/storage";
-import { db, storage } from "../../lib/firebaserConfig";
+import { db, storage } from "../../lib/firebaseConfig";
 
 export default function Write() {
   const apiKey = import.meta.env.VITE_TINYMCE_API_KEY as string;
@@ -49,7 +49,6 @@ export default function Write() {
   };
 
   const handleSaveStory = async () => {
-    console.log("handleSaveStory triggered");
     if (editorRef.current) {
       const currentContent = editorRef.current.getContent().trim();
       if (currentContent) {

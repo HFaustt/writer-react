@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { get, getDatabase, ref, remove } from "firebase/database";
 import { StoryPost } from "../../../../types";
-import { db } from "../../../../lib/firebaserConfig";
+import { db } from "../../../../lib/firebaseConfig";
 import ParseHTML from "../../../../components/ParseHTML";
 import GoBackBtn from "../../../../components/ui/Buttons/GoBackBtn";
 import DeleteBtn from "../../../../components/ui/Buttons/DeleteBtn";
