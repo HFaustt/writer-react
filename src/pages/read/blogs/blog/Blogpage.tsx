@@ -6,12 +6,14 @@ import { db } from "../../../../lib/firebaseConfig";
 import ParseHTML from "../../../../components/ParseHTML";
 import GoBackBtn from "../../../../components/ui/Buttons/GoBackBtn";
 import DeleteBtn from "../../../../components/ui/Buttons/DeleteBtn";
-import { useAuth0 } from "@auth0/auth0-react";
+import { useAuth } from "../../../../auth/context/FirebaseAuth";
+import { toast } from "react-hot-toast";
 
 function BlogPage() {
   const { id: blogId } = useParams();
   const navigate = useNavigate();
-  const { isAuthenticated } = useAuth0();
+  const { currentUser } = useAuth();
+
   const [blog, setBlog] = useState<BlogPost | null>(null);
 
   useEffect(() => {
@@ -34,6 +36,7 @@ function BlogPage() {
     const dbRef = ref(getDatabase(), `posts/blogs/${id}`);
     await remove(dbRef);
     navigate("/read/blogs");
+    toast.success("Blog deleted successfully");
   }
 
   function onGoingBack() {
@@ -54,7 +57,7 @@ function BlogPage() {
 
       <p>Author: {blog.author}</p>
 
-      {isAuthenticated && (
+      {currentUser && (
         <div>
           <DeleteBtn id={blogId} onDelete={onDelete} />
         </div>

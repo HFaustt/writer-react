@@ -47,12 +47,13 @@ export default function NavBar() {
               </NavLink>
             </li>
 
-            <li>
-              <NavLink to="/write" className={activeStyle}>
-                Write
-              </NavLink>
-            </li>
-
+            {currentUser && (
+              <li>
+                <NavLink to="/write" className={activeStyle}>
+                  Write
+                </NavLink>
+              </li>
+            )}
             <li>
               <NavLink to="/read" className={activeStyle}>
                 Read

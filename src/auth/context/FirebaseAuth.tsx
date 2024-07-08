@@ -8,6 +8,7 @@ import {
 import { createContext } from "react";
 import { AuthContextType, AuthProviderProps } from "../../types";
 import { auth } from "../../lib/firebaseConfig";
+import { toast } from "react-hot-toast";
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
@@ -75,6 +76,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
     setCurrentUser(null);
     setUserName(null);
     setUserLoggedIn(false);
+    toast.success("You have been signed out.");
   };
 
   const value: AuthContextType = {

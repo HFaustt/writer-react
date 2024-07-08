@@ -3,13 +3,13 @@ import { Editor } from "@tinymce/tinymce-react";
 import { Editor as TinyMCEEditor } from "tinymce";
 import styles from "./Write.module.css";
 import { push, ref, set } from "firebase/database";
-
 import {
   getDownloadURL,
   ref as storageRef,
   uploadBytes,
 } from "firebase/storage";
 import { db, storage } from "../../lib/firebaseConfig";
+import { toast } from "react-hot-toast";
 
 export default function Write() {
   const apiKey = import.meta.env.VITE_TINYMCE_API_KEY as string;
@@ -64,12 +64,11 @@ export default function Write() {
           heroImage: imageUrl,
           content: currentContent,
         });
-
-        alert("Story saved successfully!");
+        toast.success("Story saved successfully!");
         handleResetContent();
         setLoading(false);
       } else {
-        alert("Please write something before saving.");
+        toast.error("Please write something before saving.");
       }
     }
   };
@@ -90,12 +89,11 @@ export default function Write() {
           heroImage: imageUrl,
           content: currentContent,
         });
-
-        alert("Blog saved successfully!");
+        toast.success("Blog saved successfully!");
         handleResetContent();
         setLoading(false);
       } else {
-        alert("Please write something before saving.");
+        toast.error("Please write something before saving.");
       }
     }
   };
@@ -176,7 +174,6 @@ export default function Write() {
         >
           Save Story
         </button>
-
         <button
           onClick={handleSaveBlog}
           style={{ cursor: "pointer" }}

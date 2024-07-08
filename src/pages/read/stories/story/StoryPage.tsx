@@ -6,11 +6,12 @@ import { db } from "../../../../lib/firebaseConfig";
 import ParseHTML from "../../../../components/ParseHTML";
 import GoBackBtn from "../../../../components/ui/Buttons/GoBackBtn";
 import DeleteBtn from "../../../../components/ui/Buttons/DeleteBtn";
-import { useAuth0 } from "@auth0/auth0-react";
+import { useAuth } from "../../../../auth/context/FirebaseAuth";
+import { toast } from "react-hot-toast";
 
 function StoryPage() {
   const navigate = useNavigate();
-  const { isAuthenticated } = useAuth0();
+  const { currentUser } = useAuth();
   const { id: storyId } = useParams();
   const [story, setStory] = useState<StoryPost | null>(null);
 
@@ -30,12 +31,11 @@ function StoryPage() {
     return <div>Loading...</div>;
   }
 
-  //TODO: The navigate is conflicting with the navigate(-1) in the '/read/stories' page when you delete a post.
-
   async function onDelete(id: string) {
     const dbRef = ref(getDatabase(), `posts/stories/${id}`);
     await remove(dbRef);
     navigate("/read/stories");
+    toast.success("Story deleted successfully");
   }
 
   function onGoingBack() {
@@ -55,7 +55,7 @@ function StoryPage() {
       </div>
       <p>Author: {story.author}</p>
 
-      {isAuthenticated && (
+      {currentUser && (
         <div>
           <DeleteBtn id={storyId} onDelete={onDelete} />
         </div>

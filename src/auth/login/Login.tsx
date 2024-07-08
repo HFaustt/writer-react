@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Navigate } from "react-router-dom";
 import styles from "./Login.module.css";
 import { useAuth } from "../context/FirebaseAuth";
+import { toast } from "react-hot-toast";
 
 function Login() {
   const { userLoggedIn, sendSignInEmail } = useAuth();
@@ -15,7 +16,7 @@ function Login() {
       setIsSigningIn(true);
       try {
         await sendSignInEmail(email);
-        alert("Sign-in link sent! Check your email.");
+        toast.success("Check your email for a login link");
       } catch (error) {
         setErrorMessage((error as Error).message);
         setIsSigningIn(false);

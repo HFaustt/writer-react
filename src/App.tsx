@@ -6,28 +6,19 @@ import Error from "./components/shared/Error";
 import Read from "./pages/read/Read";
 import { Suspense } from "react";
 import CallbackPage from "./pages/callback/CallbackPage";
-// import { useAuth0 } from "@auth0/auth0-react";
 import Loader from "./components/shared/Loader";
 import StoriesPage from "./pages/read/stories/StoriesPage";
 import BlogsPage from "./pages/read/blogs/BlogsPage";
 import StoryPage from "./pages/read/stories/story/StoryPage";
 import Write from "./pages/write/Write";
 import Login from "./auth/login/Login";
-import { AuthProvider, useAuth } from "./auth/context/FirebaseAuth";
+import { useAuth } from "./auth/context/FirebaseAuth";
 import BlogPage from "./pages/read/blogs/blog/BlogPage";
 import FinishSignIn from "./auth/login/FinishSignIn";
+import { Toaster } from "react-hot-toast";
 
 function App() {
-  // const { isLoading } = useAuth0();
-  // if (isLoading) {
-  //   return (
-  //     <div>
-  //       <Loader />
-  //     </div>
-  //   );
-  // }
-
-  // const { currentUser } = useAuth();
+  const { currentUser } = useAuth();
 
   return (
     <Suspense fallback={<Loader />}>
@@ -35,11 +26,11 @@ function App() {
         <Route path="/" element={<AppLayout />}>
           <Route index element={<Home />} />
           <Route path="about" element={<About />} />
-          {/* <Route
+          <Route
             path="/write"
             element={currentUser ? <Write /> : <Navigate to="/login" />}
-          />   */}
-          <Route path="/write" element={<Write />} />
+          />
+          {/* <Route path="/write" element={<Write />} /> */}
 
           <Route path="read" element={<Read />} />
           <Route path="/read/stories" element={<StoriesPage />} />
@@ -53,6 +44,28 @@ function App() {
           <Route path="*" element={<Error />} />
         </Route>
       </Routes>
+
+      <Toaster
+        position="bottom-center"
+        gutter={12}
+        containerStyle={{ margin: "12px", backgroundColor: "none" }}
+        toastOptions={{
+          success: {
+            duration: 5000,
+          },
+          error: {
+            duration: 7000,
+          },
+          style: {
+            fontSize: "16px",
+            maxWidth: "500px",
+            padding: "16px 24px",
+            backgroundColor: "white",
+            color: "var(--color-grey-700)",
+          },
+        }}
+        reverseOrder={false}
+      />
     </Suspense>
   );
 }
