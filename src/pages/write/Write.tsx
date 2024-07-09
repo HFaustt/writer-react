@@ -1,4 +1,4 @@
-import { useRef, useState, useEffect } from "react";
+import { useRef, useState } from "react";
 import { Editor } from "@tinymce/tinymce-react";
 import { Editor as TinyMCEEditor } from "tinymce";
 import styles from "./Write.module.css";
@@ -10,27 +10,24 @@ import {
 } from "firebase/storage";
 import { db, storage } from "../../lib/firebaseConfig";
 import { toast } from "react-hot-toast";
+import { WritePageButtons } from "../../components/ui/Buttons/Buttons";
 
 export default function Write() {
   const apiKey = import.meta.env.VITE_TINYMCE_API_KEY as string;
   const editorRef = useRef<TinyMCEEditor | null>(null);
-  const [content, setContent] = useState<string>("");
+  // Removed 'content' state as it's managed directly by TinyMCE
   const [title, setTitle] = useState<string>("");
   const [author, setAuthor] = useState<string>("");
   const [heroImage, setHeroImage] = useState<File | string>("");
   const [loading, setLoading] = useState<boolean>(false);
 
-  useEffect(() => {
-    if (editorRef.current) {
-      setContent(editorRef.current.getContent());
-    }
-  }, [editorRef.current]);
+  // Removed useEffect for 'content' state
+  // Removed setContent function and any related 'content' references
 
   const handleResetContent = () => {
     if (editorRef.current) {
       editorRef.current.setContent("");
     }
-    setContent("");
     setAuthor("");
     setTitle("");
     setHeroImage("");
@@ -62,7 +59,7 @@ export default function Write() {
           title,
           author,
           heroImage: imageUrl,
-          content: currentContent,
+          content: currentContent, // 'content' removed from state, managed directly by editor
         });
         toast.success("Story saved successfully!");
         handleResetContent();
@@ -87,7 +84,7 @@ export default function Write() {
           title,
           author,
           heroImage: imageUrl,
-          content: currentContent,
+          content: currentContent, // 'content' removed from state, managed directly by editor
         });
         toast.success("Blog saved successfully!");
         handleResetContent();
@@ -135,7 +132,6 @@ export default function Write() {
             onInit={(_evt, editor) => {
               editorRef.current = editor;
             }}
-            onEditorChange={(newContent) => setContent(newContent)}
             init={{
               height: 650,
               menubar: true,
@@ -167,20 +163,13 @@ export default function Write() {
         </div>
       </section>
       <div className={styles.buttons}>
-        <button
-          onClick={handleSaveStory}
-          style={{ cursor: "pointer" }}
-          disabled={loading}
-        >
+        <WritePageButtons onClick={handleSaveStory} disabled={loading}>
           Save Story
-        </button>
-        <button
-          onClick={handleSaveBlog}
-          style={{ cursor: "pointer" }}
-          disabled={loading}
-        >
+        </WritePageButtons>
+
+        <WritePageButtons onClick={handleSaveBlog} disabled={loading}>
           Save Blog
-        </button>
+        </WritePageButtons>
       </div>
     </div>
   );

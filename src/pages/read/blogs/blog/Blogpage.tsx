@@ -4,8 +4,10 @@ import { get, getDatabase, ref, remove } from "firebase/database";
 import { BlogPost } from "../../../../types";
 import { db } from "../../../../lib/firebaseConfig";
 import ParseHTML from "../../../../components/ParseHTML";
-import GoBackBtn from "../../../../components/ui/Buttons/GoBackBtn";
-import DeleteBtn from "../../../../components/ui/Buttons/DeleteBtn";
+import {
+  DeleteBtn,
+  GoBackBtn,
+} from "../../../../components/ui/Buttons/Buttons";
 import { useAuth } from "../../../../auth/context/FirebaseAuth";
 import { toast } from "react-hot-toast";
 

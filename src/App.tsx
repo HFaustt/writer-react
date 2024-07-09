@@ -2,7 +2,6 @@ import { Navigate, Route, Routes } from "react-router-dom";
 import AppLayout from "./components/shared/AppLayout";
 import Home from "./pages/home/Home";
 import About from "./pages/about/About";
-import Error from "./components/shared/Error";
 import Read from "./pages/read/Read";
 import { Suspense } from "react";
 import CallbackPage from "./pages/callback/CallbackPage";
@@ -16,6 +15,7 @@ import { useAuth } from "./auth/context/FirebaseAuth";
 import BlogPage from "./pages/read/blogs/blog/BlogPage";
 import FinishSignIn from "./auth/login/FinishSignIn";
 import { Toaster } from "react-hot-toast";
+import ErrorPage from "./components/shared/ErrorPage";
 
 function App() {
   const { currentUser } = useAuth();
@@ -30,7 +30,6 @@ function App() {
             path="/write"
             element={currentUser ? <Write /> : <Navigate to="/login" />}
           />
-          {/* <Route path="/write" element={<Write />} /> */}
 
           <Route path="read" element={<Read />} />
           <Route path="/read/stories" element={<StoriesPage />} />
@@ -41,7 +40,7 @@ function App() {
           <Route path="finishSignIn" element={<FinishSignIn />} />
 
           <Route path="callback" element={<CallbackPage />} />
-          <Route path="*" element={<Error />} />
+          <Route path="*" element={<ErrorPage />} />
         </Route>
       </Routes>
 

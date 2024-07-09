@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import styles from "./Read.module.css";
-import ReadButton from "../../components/ui/Buttons/ReadButtons";
+import { ReadPageButtons } from "../../components/ui/Buttons/Buttons";
 
 export default function Read() {
   const navigate = useNavigate();
@@ -8,14 +8,14 @@ export default function Read() {
   return (
     <div className={styles.container}>
       <div className={styles.leftHalf}>
-        <ReadButton onClick={() => navigate("/read/stories")}>
-          Latest stories
-        </ReadButton>
+        <ReadPageButtons onClick={() => navigate("/read/stories")}>
+          Read Stories
+        </ReadPageButtons>
       </div>
       <div className={styles.rightHalf}>
-        <ReadButton onClick={() => navigate("/read/blogs")}>
-          Latest blogs
-        </ReadButton>
+        <ReadPageButtons onClick={() => navigate("/read/blogs")}>
+          Read Blogs
+        </ReadPageButtons>
       </div>
     </div>
   );

@@ -3,8 +3,8 @@ import styles from "./NavBar.module.css";
 import { useMediaQuery } from "@mui/material";
 import MobileNav from "./MobileNav";
 import SocialMediaIcons from "./SocialMediaIcons";
-import NavAuthButtons from "./NavAuthButtons";
 import { useAuth } from "../../auth/context/FirebaseAuth";
+import { LogButtons } from "../ui/Buttons/Buttons";
 
 export default function NavBar() {
   function activeStyle({ isActive }: { isActive: boolean }) {
@@ -61,7 +61,9 @@ export default function NavBar() {
             </li>
           </ul>
 
-          <NavAuthButtons />
+          <div className={styles.logButtons}>
+            <LogButtons />
+          </div>
 
           <div className={styles.socialMediaIcons}>
             <SocialMediaIcons />

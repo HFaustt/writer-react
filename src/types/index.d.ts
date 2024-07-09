@@ -14,6 +14,14 @@ export interface StoryPost {
   content: string;
 }
 
+export interface PostProps {
+  title: string;
+  author?: string;
+  heroImage: string;
+  content: string;
+  link: string;
+}
+
 export interface dataProps {
   // title: string;
   // author?: string | undefined;
@@ -41,4 +49,20 @@ interface AuthContextType {
 
 export interface AuthProviderProps {
   children: ReactNode;
+}
+
+export interface truncateTextProps {
+  text: string;
+  length: number;
+}
+
+export interface WritePageButtonsProps {
+  children: React.ReactNode;
+  onClick: () => void;
+  disabled?: boolean;
+}
+
+export interface ReadPageButtonsProps {
+  children: React.ReactNode;
+  onClick: () => void;
 }
