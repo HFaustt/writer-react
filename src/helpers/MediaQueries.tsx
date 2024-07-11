@@ -1,13 +1,5 @@
 import { useMediaQuery } from "@mui/material";
-
-export type MediaQueries = {
-  isXXLargeScreen: boolean;
-  isXLargeScreen: boolean;
-  isLargeScreen: boolean;
-  isMediumScreen: boolean;
-  isSmallScreen: boolean;
-  isXSmallScreen: boolean;
-};
+import { MediaQueries } from "../types";
 
 export function useMediaQueries(): MediaQueries {
   const isXXLargeScreen = useMediaQuery("(min-width: 1601px)");

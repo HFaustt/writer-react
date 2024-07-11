@@ -15,6 +15,6 @@ html {
 
 body {
   font-family: "Eczar", serif;
-  background-color: #eeeeee;
+  /* background-color: #f7f7f7; */
   color: var(--clr-light);
 }

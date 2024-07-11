@@ -12,7 +12,11 @@ export default function Home() {
     <div className={styles.container}>
       <div className={styles.divContainer}>
         <div className={styles.leftHalf}>
-          <h1 className={styles.leftHeader}>WRITER'S HOME</h1>
+          <h1 className={styles.leftHeader}>
+            WRITER'S
+            <br />
+            <span>HOME</span>
+          </h1>
           <footer className={styles.footer}>
             <img
               src="/whiteGlasses.png"

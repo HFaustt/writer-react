@@ -15,14 +15,10 @@ import { WritePageButtons } from "../../components/ui/Buttons/Buttons";
 export default function Write() {
   const apiKey = import.meta.env.VITE_TINYMCE_API_KEY as string;
   const editorRef = useRef<TinyMCEEditor | null>(null);
-  // Removed 'content' state as it's managed directly by TinyMCE
   const [title, setTitle] = useState<string>("");
   const [author, setAuthor] = useState<string>("");
   const [heroImage, setHeroImage] = useState<File | string>("");
   const [loading, setLoading] = useState<boolean>(false);
-
-  // Removed useEffect for 'content' state
-  // Removed setContent function and any related 'content' references
 
   const handleResetContent = () => {
     if (editorRef.current) {
@@ -59,7 +55,8 @@ export default function Write() {
           title,
           author,
           heroImage: imageUrl,
-          content: currentContent, // 'content' removed from state, managed directly by editor
+          content: currentContent,
+          createdAt: Date.now(),
         });
         toast.success("Story saved successfully!");
         handleResetContent();
@@ -84,7 +81,8 @@ export default function Write() {
           title,
           author,
           heroImage: imageUrl,
-          content: currentContent, // 'content' removed from state, managed directly by editor
+          content: currentContent,
+          createdAt: Date.now(),
         });
         toast.success("Blog saved successfully!");
         handleResetContent();

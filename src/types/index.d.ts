@@ -1,17 +1,19 @@
 export interface BlogPost {
   title: string;
-  blogId: string;
+  blogId: string | undefined;
   author?: string | undefined;
   heroImage: string;
   content: string;
+  createdAt: number;
 }
 
 export interface StoryPost {
   title: string;
-  storyId: string;
+  storyId: string | undefined;
   author?: string | undefined;
   heroImage: string;
   content: string;
+  createdAt: number;
 }
 
 export interface PostProps {
@@ -27,11 +29,6 @@ export interface dataProps {
   // author?: string | undefined;
   // heroImage: string;
   content: string;
-}
-
-export interface deleteBtnProps {
-  id: string | undefined;
-  onDelete: (id: string) => void;
 }
 
 interface AuthContextType {
@@ -66,3 +63,20 @@ export interface ReadPageButtonsProps {
   children: React.ReactNode;
   onClick: () => void;
 }
+
+export interface DeleteBtnProps {
+  id: string | undefined;
+  onDelete: (id: string) => void;
+  ariaDescribedBy?: string;
+  onClick?: (event: React.MouseEvent<HTMLElement>) => void;
+  sx?: object;
+}
+
+export type MediaQueries = {
+  isXXLargeScreen: boolean;
+  isXLargeScreen: boolean;
+  isLargeScreen: boolean;
+  isMediumScreen: boolean;
+  isSmallScreen: boolean;
+  isXSmallScreen: boolean;
+};

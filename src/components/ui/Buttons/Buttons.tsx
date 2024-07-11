@@ -2,9 +2,9 @@ import { Button, Stack, ThemeProvider, createTheme } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../../auth/context/FirebaseAuth";
 import {
+  DeleteBtnProps,
   ReadPageButtonsProps,
   WritePageButtonsProps,
-  deleteBtnProps,
 } from "../../../types";
 
 function HomePageButtons() {
@@ -189,8 +189,13 @@ function WritePageButtons({
     </ThemeProvider>
   );
 }
-
-function DeleteBtn({ id, onDelete }: deleteBtnProps) {
+function DeleteBtn({
+  id,
+  onDelete,
+  ariaDescribedBy,
+  onClick,
+  sx,
+}: DeleteBtnProps) {
   const theme = createTheme({
     palette: {
       primary: {
@@ -218,12 +223,11 @@ function DeleteBtn({ id, onDelete }: deleteBtnProps) {
   return (
     <ThemeProvider theme={theme}>
       <Button
-        onClick={handleDelete}
+        aria-describedby={ariaDescribedBy}
+        onClick={onClick || handleDelete}
         variant="contained"
         size="small"
-        sx={{
-          padding: "5px 15px",
-        }}
+        sx={{ padding: "5px 15px", ...sx }}
       >
         Delete post
       </Button>
