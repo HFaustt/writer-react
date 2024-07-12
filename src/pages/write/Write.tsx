@@ -17,6 +17,7 @@ export default function Write() {
   const editorRef = useRef<TinyMCEEditor | null>(null);
   const [title, setTitle] = useState<string>("");
   const [author, setAuthor] = useState<string>("");
+  const [category, setCategory] = useState<string>("");
   const [heroImage, setHeroImage] = useState<File | string>("");
   const [loading, setLoading] = useState<boolean>(false);
 
@@ -54,6 +55,7 @@ export default function Write() {
         await set(newDocRef, {
           title,
           author,
+          category,
           heroImage: imageUrl,
           content: currentContent,
           createdAt: Date.now(),
@@ -80,6 +82,7 @@ export default function Write() {
         await set(newDocRef, {
           title,
           author,
+          category,
           heroImage: imageUrl,
           content: currentContent,
           createdAt: Date.now(),
@@ -113,6 +116,16 @@ export default function Write() {
             value={author}
             onChange={(e) => setAuthor(e.target.value)}
           />
+
+          <input
+            type="text"
+            placeholder="Category"
+            className={styles.categoryInput}
+            id="category"
+            value={category}
+            onChange={(e) => setCategory(e.target.value)}
+          />
+
           <input
             type="file"
             className={styles.imageInput}

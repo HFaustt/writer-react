@@ -9,7 +9,12 @@
 .name {
   font-size: 16px;
   background: transparent;
-  /* transition: all ease-in-out 1s; */
+}
+
+.homeName {
+  color: white;
+  font-size: 16px;
+  background: transparent;
 }
 
 .logo {
@@ -46,6 +51,41 @@
   text-decoration: none;
   background: transparent;
   transition: all, ease-in-out, 0.2s;
+}
+
+.homeNavItems {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: transparent;
+  position: relative;
+  z-index: 10;
+}
+
+.homeNavItems a {
+  color: white;
+  text-decoration: none;
+  background: transparent;
+  transition: all, ease-in-out, 0.2s;
+}
+
+.homeNavItems li {
+  list-style: none;
+  background: transparent;
+}
+
+.homeNavItems a:hover {
+  font-size: 20px;
+  transition: all, ease-in-out, 0.2s;
+  background: transparent;
+}
+
+.homeNavItems a.active {
+  text-decoration: underline;
+  font-size: 20px;
+  font-weight: 500;
+  background: transparent;
+  text-underline-offset: 5px;
 }
 
 .navItems a:hover {

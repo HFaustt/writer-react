@@ -1,7 +1,8 @@
 export interface BlogPost {
   title: string;
   blogId: string | undefined;
-  author?: string | undefined;
+  category: string | undefined;
+  author: string | undefined;
   heroImage: string;
   content: string;
   createdAt: number;
@@ -10,7 +11,8 @@ export interface BlogPost {
 export interface StoryPost {
   title: string;
   storyId: string | undefined;
-  author?: string | undefined;
+  category: string | undefined;
+  author: string | undefined;
   heroImage: string;
   content: string;
   createdAt: number;
@@ -18,16 +20,17 @@ export interface StoryPost {
 
 export interface PostProps {
   title: string;
-  author?: string;
+  author: string | undefined;
+  category: string | undefined;
   heroImage: string;
   content: string;
   link: string;
+  createdAt: number;
+  storyImg?: string;
+  blogImg?: string;
 }
 
 export interface dataProps {
-  // title: string;
-  // author?: string | undefined;
-  // heroImage: string;
   content: string;
 }
 
@@ -62,6 +65,11 @@ export interface WritePageButtonsProps {
 export interface ReadPageButtonsProps {
   children: React.ReactNode;
   onClick: () => void;
+}
+
+export interface PostPageButtonProps {
+  link: string;
+  children: React.ReactNode;
 }
 
 export interface DeleteBtnProps {

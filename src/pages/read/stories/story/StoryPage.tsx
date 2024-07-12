@@ -93,7 +93,7 @@ function StoryPage() {
         <h2 className={styles.title}>{story.title}</h2>
 
         <div className={styles.userInfo}>
-          <img src="/user.webp" alt="user photo" width={40} height={40} />
+          <img src="/storyPic.webp" alt="user photo" width={40} height={40} />
           <div>
             <p>{story.author}</p>
             <span>
@@ -104,7 +104,7 @@ function StoryPage() {
 
         {story.heroImage && (
           <div className={styles.heroImage}>
-            <img src={story.heroImage} alt="heroImage" />
+            <img src={story.heroImage} alt="heroImage" loading="lazy" />
           </div>
         )}
         <div className={styles.content}>

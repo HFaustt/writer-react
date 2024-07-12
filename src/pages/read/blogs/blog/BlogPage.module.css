@@ -22,7 +22,7 @@
   gap: 14px;
   margin-bottom: 1rem;
   align-items: center;
-  border-bottom: solid 0.1px;
+  border-bottom: solid 1px #ddd;
   width: 80%;
   padding-bottom: 5px;
 }
@@ -103,6 +103,8 @@
   bottom: 2rem;
   right: 2rem;
 }
+
+
 
 /* xs */
 @media (min-width: 576px) {

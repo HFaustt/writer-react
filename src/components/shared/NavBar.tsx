@@ -14,26 +14,32 @@ export default function NavBar() {
   const isMobile = useMediaQuery("(max-width: 768px)");
 
   const location = useLocation();
+  let anchorEl: null | HTMLElement = null;
+  const open = Boolean(anchorEl);
+  const popoverId = open ? "simple-popover" : undefined;
   const { userName, currentUser } = useAuth();
+  const inHomePage = location.pathname === "/";
 
   return (
     <>
       {isMobile ? (
         <MobileNav />
       ) : (
-        <nav className={styles.navItems}>
+        <nav className={inHomePage ? styles.homeNavItems : styles.navItems}>
           <Link to="/about" className={styles.logo}>
             <img
-              src={
-                location.pathname === "/" ? "/logoWhite.png" : "/logoBlack.png"
-              }
+              src={inHomePage ? "/logoWhite.png" : "/logoBlack.png"}
               alt="logo"
               height={40}
               width={40}
             />
           </Link>
 
-          {currentUser && <p className={styles.name}>{userName}</p>}
+          {currentUser && (
+            <p className={inHomePage ? styles.homeName : styles.name}>
+              {userName}
+            </p>
+          )}
 
           <ul className={styles.navList}>
             <li>
@@ -62,7 +68,7 @@ export default function NavBar() {
           </ul>
 
           <div className={styles.logButtons}>
-            <LogButtons />
+            <LogButtons ariaDescribedBy={popoverId} />
           </div>
 
           <div className={styles.socialMediaIcons}>

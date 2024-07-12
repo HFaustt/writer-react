@@ -1,61 +1,146 @@
 .container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Three columns */
-  gap: 2rem;
-  max-width: 1200px; /* Adjust the max-width as needed */
-  margin: 0 auto;
-  padding: 20px;
-}
-
-.post {
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 16px;
-  background-color: #fff;
-  position: relative;
-  padding-bottom: 3rem;
-}
-
-.post h2 {
-  margin-top: 0;
-  font-size: 24px;
-  color: #333;
-  text-align: center;
-}
-
-.post img {
-  display: block;
-  margin: 10px auto;
-  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  margin: 20px;
   cursor: pointer;
   transition: all ease-in-out 0.5s;
 }
 
-.post img:hover {
-  transform: scale(1.05);
+.container:hover {
+  transform: scale(1.02);
   transition: all ease-in-out 0.5s;
 }
 
-.post p {
-  margin: 8px 0;
-  color: #555;
+.post {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  background-color: #fff;
+  position: relative;
+}
+
+.info {
+  flex: 1;
+  padding-right: 20px;
+}
+
+.imageContainer {
+  flex: 0 0 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.imageContainer img {
+  width: 100%;
+}
+
+.image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all ease-in-out 0.5s;
+}
+
+.image:hover {
+  transform: scale(1.01);
+  transition: all ease-in-out 0.5s;
+}
+
+.userContainer {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 1rem;
+}
+
+.userContainer img {
+  width: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.post h2 {
+  margin-top: 0;
+  font-size: 20px;
+  color: #333;
 }
 
 .author {
   font-size: 14px;
   font-family: monospace;
-  text-align: center;
+}
+
+.category {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.readTime {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.readTime span {
+  margin-left: 10px;
+}
+
+.content {
   margin-bottom: 1rem;
 }
 
 .readMoreLink {
-  position: absolute;
-  bottom: 10px;
-  left: 10px;
   color: #007bff;
   text-decoration: none;
 }
 
 .readMoreLink:hover {
   text-decoration: underline;
+}
+
+/* xs */
+@media (min-width: 576px) {
+  .container {
+    max-width: 576px;
+  }
+}
+
+/* sm */
+@media (min-width: 640px) {
+  .container {
+    max-width: 640px;
+  }
+}
+
+/* md */
+@media (min-width: 768px) {
+  .container {
+    max-width: 768px;
+  }
+}
+
+/* lg */
+@media (min-width: 1024px) {
+  .container {
+    max-width: 1024px;
+  }
+}
+
+/* xl */
+@media (min-width: 1280px) {
+  .container {
+    max-width: 1280px;
+  }
+}
+
+/* 2xl */
+@media (min-width: 1600px) {
+  .container {
+    max-width: 1600px;
+  }
 }
