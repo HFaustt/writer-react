@@ -38,7 +38,7 @@ function FinishSignIn() {
   }, [setCurrentUser]);
 
   if (completed) {
-    return <Navigate to="/write" />;
+    return <Navigate to="/" />;
   }
 
   return (
