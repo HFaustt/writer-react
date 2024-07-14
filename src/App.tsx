@@ -12,10 +12,10 @@ import StoryPage from "./pages/read/stories/story/StoryPage";
 import Write from "./pages/write/Write";
 import Login from "./auth/login/Login";
 import { useAuth } from "./auth/context/FirebaseAuth";
-import BlogPage from "./pages/read/blogs/blog/BlogPage";
 import FinishSignIn from "./auth/login/FinishSignIn";
 import { Toaster } from "react-hot-toast";
 import ErrorPage from "./components/shared/ErrorPage";
+import BlogPage from "./pages/read/blogs/blog/Blogpage";
 
 function App() {
   const { currentUser } = useAuth();
