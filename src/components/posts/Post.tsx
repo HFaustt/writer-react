@@ -85,16 +85,17 @@ function Post({
             <p>Read more...</p>
           </Link>
         </div>
-        <div className={styles.imageContainer}>
-          {heroImage && (
+
+        {heroImage && (
+          <div className={styles.imageContainer}>
             <img
               src={heroImage}
               alt="heroImage"
               className={styles.image}
               onClick={() => navigate(link)}
             />
-          )}
-        </div>
+          </div>
+        )}
       </div>
     </div>
   );

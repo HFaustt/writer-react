@@ -18,17 +18,24 @@ export default function NavBar() {
   const open = Boolean(anchorEl);
   const popoverId = open ? "simple-popover" : undefined;
   const { userName, currentUser } = useAuth();
-  const inHomePage = location.pathname === "/";
+  const isHomePage = location.pathname === "/";
+  const isReadPage = location.pathname === "/read";
 
   return (
     <>
       {isMobile ? (
         <MobileNav />
       ) : (
-        <nav className={inHomePage ? styles.homeNavItems : styles.navItems}>
+        <nav
+          className={
+            isHomePage || isReadPage ? styles.homeNavItems : styles.navItems
+          }
+        >
           <Link to="/about" className={styles.logo}>
             <img
-              src={inHomePage ? "/logoWhite.png" : "/logoBlack.png"}
+              src={
+                isHomePage || isReadPage ? "/logoWhite.png" : "/logoBlack.png"
+              }
               alt="logo"
               height={40}
               width={40}
@@ -36,7 +43,11 @@ export default function NavBar() {
           </Link>
 
           {currentUser && (
-            <p className={inHomePage ? styles.homeName : styles.name}>
+            <p
+              className={
+                isHomePage || isReadPage ? styles.homeName : styles.name
+              }
+            >
               {userName}
             </p>
           )}
@@ -60,6 +71,7 @@ export default function NavBar() {
                 </NavLink>
               </li>
             )}
+
             <li>
               <NavLink to="/read" className={activeStyle}>
                 Read

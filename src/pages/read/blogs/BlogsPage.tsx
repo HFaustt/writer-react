@@ -48,13 +48,15 @@ function BlogsPage() {
   }
 
   return (
-    <>
+    <div className={styles.heroContainer}>
       <GoBackBtn onClick={onGoingBack} />
       <div className={styles.container}>
         <div className={styles.leftSide}>
           {category && <h2 className={styles.category}>{category}</h2>}
           {isLoading ? (
-            <Loader />
+            <div className={styles.loader}>
+              <Loader />
+            </div>
           ) : (
             <section className={styles.postsContainer}>
               {filteredBlogs.map((blog, index) => (
@@ -80,7 +82,7 @@ function BlogsPage() {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }
 

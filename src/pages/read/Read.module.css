@@ -3,42 +3,70 @@
   height: 90vh;
 }
 
-.leftHalf {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 50%;
-  height: 100%;
-  display: flex;
-  background-image: url("/home.webp");
-  background-size: cover;
-  background-position: center;
-  align-items: center;
-  justify-content: center;
-  transition: all 1s ease-in-out;
+body {
+  background-color: black;
 }
 
+.leftHalf,
 .rightHalf {
   position: absolute;
   top: 0;
-  right: 0;
   width: 50%;
   height: 100%;
   display: flex;
-  background-image: url("/home.webp");
   background-size: cover;
   background-position: center;
   align-items: center;
   justify-content: center;
-  transition: all 1s ease-in-out;
+  transition: transform 1s ease-in-out;
 }
 
-.leftHalf:hover {
-  scale: 1.1;
-  transition: all 1s ease-in-out;
+.leftHalf::after,
+.rightHalf::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: black;
+  opacity: 0.6;
+  transition: opacity 1s ease-in-out;
 }
 
+.leftHalf:hover,
 .rightHalf:hover {
-  scale: 1.1;
-  transition: all 1s ease-in-out;
+  transform: scale(1.04);
+}
+
+.leftHalf:hover::after,
+.rightHalf:hover::after {
+  opacity: 0.2;
+}
+
+.leftHalf {
+  left: 0;
+  background-image: url("/story.jpg");
+  background-position: bottom;
+}
+
+.rightHalf {
+  right: 0;
+  background-image: url("/blog1.jpg");
+}
+
+.leftSide,
+.rightSide {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: azure;
+  z-index: 1;
+}
+
+.leftSide h2,
+.rightSide h2 {
+  font-size: 3.7rem;
+  margin: 5px 0 20px;
 }

@@ -36,7 +36,7 @@
 .navList {
   display: flex;
   align-items: center;
-  gap: 15px;
+  gap: 10px;
   padding: 0 10px;
   background: transparent;
 }

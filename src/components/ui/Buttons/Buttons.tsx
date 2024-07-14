@@ -186,10 +186,19 @@ function ReadPageButtons({ children, onClick }: ReadPageButtonsProps) {
     <ThemeProvider theme={theme}>
       <Button
         onClick={onClick}
-        variant="contained"
-        size="small"
+        variant="text"
+        size="large"
         sx={{
-          padding: "5px 15px",
+          padding: "15px 15px",
+          color: "white",
+          fontWeight: "800",
+          borderRadius: "10px",
+          border: "1px solid #ffffff",
+          ":hover": {
+            backgroundColor: "#eaeaea",
+            color: "black",
+            transition: "ease-in-out 0.5s",
+          },
         }}
       >
         {children}
@@ -235,6 +244,7 @@ function WritePageButtons({
     </ThemeProvider>
   );
 }
+
 function DeleteBtn({
   id,
   onDelete,

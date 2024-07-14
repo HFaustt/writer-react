@@ -8,14 +8,23 @@ export default function Read() {
   return (
     <div className={styles.container}>
       <div className={styles.leftHalf}>
-        <ReadPageButtons onClick={() => navigate("/read/stories")}>
-          Read Stories
-        </ReadPageButtons>
+        <div className={styles.leftSide}>
+          <p>Want to Expand</p>
+          <h2> your imagination?</h2>
+          <ReadPageButtons onClick={() => navigate("/read/stories")}>
+            Awesome Fictional Stories
+          </ReadPageButtons>
+        </div>
       </div>
+
       <div className={styles.rightHalf}>
-        <ReadPageButtons onClick={() => navigate("/read/blogs")}>
-          Read Blogs
-        </ReadPageButtons>
+        <div className={styles.rightSide}>
+          <p>Want to satisfy</p>
+          <h2> Your Curiosity?</h2>
+          <ReadPageButtons onClick={() => navigate("/read/blogs")}>
+            Different Educational Blogs
+          </ReadPageButtons>
+        </div>
       </div>
     </div>
   );

@@ -47,13 +47,15 @@ function StoriesPage() {
   }
 
   return (
-    <>
+    <div className={styles.heroContainer}>
       <GoBackBtn onClick={onGoingBack} />
       <div className={styles.container}>
         <div className={styles.leftSide}>
           {category && <h2 className={styles.category}>{category}</h2>}
           {isLoading ? (
-            <Loader />
+            <div className={styles.loader}>
+              <Loader />
+            </div>
           ) : (
             <section className={styles.postsContainer}>
               {filteredStories.map((story, index) => (
@@ -79,7 +81,7 @@ function StoriesPage() {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }
 
