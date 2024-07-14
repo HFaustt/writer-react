@@ -12,6 +12,18 @@
   border-radius: 8px;
 }
 
+.info {
+  display: flex;
+  border: solid 1px #ddd;
+  border-radius: 20px;
+  text-align: center;
+  margin: 5rem auto 0;
+  align-items: center;
+  width: 60%;
+  padding: 5px 2rem;
+  font-weight: 500;
+}
+
 .title {
   text-align: center;
   margin-bottom: 20px;

@@ -27,6 +27,16 @@ function Login() {
   return (
     <div>
       {userLoggedIn && <Navigate to="/" replace={true} />}
+      <div className={styles.info}>
+        <p>
+          This website was made for educational and learning puposes.
+          <br />
+          therefore, you are not allowed to sign in, write, delete, or edit any
+          of the content that you see on this website.
+          <br />
+          Thank you for your understanding.
+        </p>
+      </div>
       <main className={styles.main}>
         <div className={styles.container}>
           <h3 className={styles.title}>Welcome Back</h3>
