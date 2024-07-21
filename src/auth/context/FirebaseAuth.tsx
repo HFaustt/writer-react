@@ -47,7 +47,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
 
   const sendSignInEmail = async (email: string): Promise<void> => {
     const actionCodeSettings = {
-      url: `${window.location.origin}/write`,
+      url: `${window.location.origin}/finishSignIn`,
       handleCodeInApp: true,
     };
 
