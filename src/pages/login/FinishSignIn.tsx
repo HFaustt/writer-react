@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Navigate } from "react-router-dom";
 import { isSignInWithEmailLink, signInWithEmailLink } from "firebase/auth";
-import { useAuth } from "../context/FirebaseAuth";
+import { useAuth } from "../../auth/context/FirebaseAuth";
 import { auth } from "../../lib/firebaseConfig";
 
 function FinishSignIn() {

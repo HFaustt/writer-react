@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Navigate } from "react-router-dom";
 import styles from "./Login.module.css";
-import { useAuth } from "../context/FirebaseAuth";
+import { useAuth } from "../../auth/context/FirebaseAuth";
 import { toast } from "react-hot-toast";
 
 function Login() {
