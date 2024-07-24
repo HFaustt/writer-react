@@ -57,7 +57,7 @@ function UserBio({
           src={
             location.pathname === "/read/stories"
               ? "/storyPic.webp"
-              : "/blogPic.png"
+              : "/blogPic.webp"
           }
           alt="user picture"
         />
