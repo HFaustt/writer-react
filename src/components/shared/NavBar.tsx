@@ -34,7 +34,7 @@ export default function NavBar() {
           <Link to="/about" className={styles.logo}>
             <img
               src={
-                isHomePage || isReadPage ? "/logoWhite.png" : "/logoBlack.png"
+                isHomePage || isReadPage ? "/logoWhite.webp" : "/logoBlack.webp"
               }
               alt="logo"
               height={40}

@@ -24,7 +24,7 @@ export default function About() {
       <div className={styles.rightHalf}>
         <div className={styles.imgContainer}>
           <img
-            src="/about.png"
+            src="/about.webp"
             alt="about me picture"
             className={styles.img}
             style={imgStyle(mediaQueries)}
@@ -33,7 +33,7 @@ export default function About() {
       </div>
       <footer className={styles.footer}>
         <img
-          src="/glasses.png"
+          src="/glasses.webp"
           alt="glasses"
           style={svgStyle(mediaQueries)}
           className={styles.svg}

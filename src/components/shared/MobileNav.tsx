@@ -11,7 +11,7 @@ export default function MobileNav() {
   return (
     <nav className={styles.mobileNav}>
       <Link to="/about" className={styles.logo}>
-        <img src="logo.jpeg" alt="logo" height={30} width={30} />
+        <img src="logo.webp" alt="logo" height={30} width={30} />
       </Link>
 
       <div className={styles.icons}>

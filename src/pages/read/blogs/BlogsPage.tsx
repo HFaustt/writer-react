@@ -23,9 +23,9 @@ function BlogsPage() {
     ? blogs.filter((blog) => blog.category === category)
     : blogs;
 
-  const blogImg = "/blogPic.png";
+  const blogImg = "/blogPic.webp";
 
-  async function getBlogs() {
+  async function getBlogs(): Promise<void> {
     const blogsRef = ref(db, "posts/blogs");
     const snapshot = await get(blogsRef);
     if (snapshot.exists()) {
@@ -34,7 +34,14 @@ function BlogsPage() {
         ...blogs[key],
         blogId: key,
       }));
-      setBlogs(blogsArray);
+
+      const sortedBlogs = blogsArray.sort((a, b) => {
+        return (
+          new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
+        );
+      });
+
+      setBlogs(sortedBlogs);
       setIsLoading(false);
     }
   }

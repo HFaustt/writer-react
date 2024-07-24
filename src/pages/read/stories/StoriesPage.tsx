@@ -20,7 +20,7 @@ function StoriesPage() {
   const [isLoading, setIsLoading] = useState(true);
   const imgStory = "/storyPic.webp";
 
-  async function getStories() {
+  async function getStories(): Promise<void> {
     const storiesRef = ref(db, "posts/stories");
     const snapshot = await get(storiesRef);
     if (snapshot.exists()) {
@@ -29,7 +29,14 @@ function StoriesPage() {
         ...stories[key],
         storyId: key,
       }));
-      setStories(storiesArray);
+
+      const sortedStories = storiesArray.sort((a, b) => {
+        return (
+          new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
+        );
+      });
+
+      setStories(sortedStories);
       setIsLoading(false);
     }
   }

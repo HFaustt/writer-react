@@ -46,13 +46,13 @@ body {
 
 .leftHalf {
   left: 0;
-  background-image: url("/story.jpg");
+  background-image: url("/story.webp");
   background-position: bottom;
 }
 
 .rightHalf {
   right: 0;
-  background-image: url("/blog.jpg");
+  background-image: url("/blog.webp");
 }
 
 .leftSide,
