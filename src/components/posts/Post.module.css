@@ -4,6 +4,7 @@
   margin: 20px;
   cursor: pointer;
   transition: all ease-in-out 0.5s;
+  width: 95%;
 }
 
 .container:hover {

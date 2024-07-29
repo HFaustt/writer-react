@@ -1,5 +1,4 @@
 * {
-  margin: 0;
   line-height: calc(1em + 0.5rem);
 
   /* background-color: #dcd7d0; */
@@ -17,4 +16,10 @@ body {
   font-family: "Eczar", serif;
   background-color: #f7f7f7;
   color: var(--clr-light);
+}
+
+@media (min-width: 1280px) {
+  * {
+    margin: 0;
+  }
 }

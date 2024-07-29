@@ -40,17 +40,17 @@ export function imgStyle({
     };
   } else if (isMediumScreen) {
     return {
-      width: 500,
+      width: 400,
       height: "auto",
     };
   } else if (isSmallScreen) {
     return {
-      width: 400,
+      width: 300,
       height: "auto",
     };
   } else if (isXSmallScreen) {
     return {
-      width: 380,
+      width: 250,
       height: "auto",
     };
   } else {

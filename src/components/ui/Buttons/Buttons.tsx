@@ -46,7 +46,7 @@ function HomePageButtons() {
           variant="contained"
           size="small"
           sx={{
-            padding: "5px 15px",
+            padding: "5px 12px",
           }}
         >
           Read Stories
