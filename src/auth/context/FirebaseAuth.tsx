@@ -43,8 +43,6 @@ export function AuthProvider({ children }: AuthProviderProps) {
     return unsubscribe;
   }, []);
 
-  //TODO: I'm getting an error when logging in that says that it's a broken link, url: `${window.location.origin}/finishSignIn`,
-
   const sendSignInEmail = async (email: string): Promise<void> => {
     const actionCodeSettings = {
       url: `${window.location.origin}/finishSignIn`,

@@ -2,11 +2,16 @@ import { useState } from "react";
 import styles from "./MobileNav.module.css";
 import MenuIcon from "@mui/icons-material/Menu";
 import MenuOpenIcon from "@mui/icons-material/MenuOpen";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import SocialMediaIcons from "./SocialMediaIcons";
+import { useAuth } from "../../auth/context/FirebaseAuth";
 
 export default function MobileNav() {
+  const location = useLocation();
   const [isOpen, setIsOpen] = useState(false);
+  const isDarkPage = location.pathname === "/" || location.pathname === "/read";
+
+  const { currentUser } = useAuth();
 
   return (
     <nav className={styles.mobileNav}>
@@ -22,7 +27,9 @@ export default function MobileNav() {
         <>
           <MenuOpenIcon onClick={() => setIsOpen(false)} />
           <div
-            className={`${styles.mobileNavItems} ${isOpen ? styles.open : ""}`}
+            className={`${
+              isDarkPage ? styles.mobileNavItems : styles.mobileNavItemsDark
+            } ${isOpen ? styles.open : ""}`}
           >
             <ul>
               <li>
@@ -31,9 +38,13 @@ export default function MobileNav() {
               <li>
                 <NavLink to="/">Home</NavLink>
               </li>
-              <li>
-                <NavLink to="/write">Write</NavLink>
-              </li>
+
+              {currentUser && (
+                <li>
+                  <NavLink to="/write">Write</NavLink>
+                </li>
+              )}
+
               <li>
                 <NavLink to="/read">Read</NavLink>
               </li>
