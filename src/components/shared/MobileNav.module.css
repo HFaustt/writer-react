@@ -12,6 +12,25 @@
   height: 20px;
 }
 
+.mobileNavDark {
+  position: fixed;
+  top: 10px;
+  left: 1.5rem;
+  right: 1rem;
+  z-index: 1000;
+  font-size: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  height: 20px;
+  color: white;
+}
+
+.mobileNavDark .logo {
+  margin-right: auto;
+}
+
 .mobileNav .logo {
   margin-right: auto;
 }

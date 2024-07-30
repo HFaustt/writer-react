@@ -10,13 +10,19 @@ export default function MobileNav() {
   const location = useLocation();
   const [isOpen, setIsOpen] = useState(false);
   const isDarkPage = location.pathname === "/" || location.pathname === "/read";
+  const isReadPage = location.pathname === "/read";
 
   const { currentUser } = useAuth();
 
   return (
-    <nav className={styles.mobileNav}>
+    <nav className={isReadPage ? styles.mobileNavDark : styles.mobileNav}>
       <Link to="/about" className={styles.logo}>
-        <img src="logoBlack.webp" alt="logo" height={30} width={30} />
+        <img
+          src={isReadPage ? "/logoWhite.webp" : "/logoBlack.webp"}
+          alt="logo"
+          height={30}
+          width={30}
+        />
       </Link>
 
       <div className={styles.icons}>
