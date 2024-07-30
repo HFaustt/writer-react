@@ -45,12 +45,12 @@ export function imgStyle({
     };
   } else if (isSmallScreen) {
     return {
-      width: 300,
+      width: 400,
       height: "auto",
     };
   } else if (isXSmallScreen) {
     return {
-      width: 250,
+      width: 380,
       height: "auto",
     };
   } else {

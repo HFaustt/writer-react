@@ -41,40 +41,59 @@
   background: transparent;
 }
 
-@media (min-width: 576px) {
-  .header {
-    font-size: 4rem;
-    letter-spacing: 0.5rem;
-    margin: 10rem 0 5px 1rem;
-    font-weight: 300;
-    background: none;
-  }
+.mobileFooter {
+  display: none;
+}
+/*////////////////////////////TODO: MEDIA QUERY ////////////////////////////*/
 
-  .text {
-    font-size: 12px;
-    margin-left: 10px;
-  }
-
-  .footer p {
-    font-size: 12px;
-    font-family: "Courier New", Courier, monospace;
+@media (max-width: 640px) {
+  .container {
+    display: flex;
+    height: 99vh;
+    width: 95vw;
     background: transparent;
+    flex-direction: column;
   }
-}
 
-/* sm */
-@media (min-width: 640px) {
+  .leftHalf {
+    display: flex;
+    width: 99%;
+    height: 50%;
+    margin: 2rem 0;
+  }
+
+  .rightHalf {
+    display: flex;
+    align-items: center;
+    width: 99%;
+    height: 60%;
+  }
+
   .header {
-    font-size: 4rem;
-    letter-spacing: 1.2rem;
-    margin: 5rem 0 5px 0;
+    font-size: 3rem;
+    letter-spacing: 1rem;
+    margin: auto;
     font-weight: 300;
     background: none;
   }
 
   .text {
-    font-size: 15px;
-    padding-right: 1rem;
+    font-size: 12px;
+    text-align: center;
+    margin: auto;
+  }
+
+  .mobileFooter {
+    display: block;
+    display: flex;
+    align-items: center;
+    margin-top: 1rem;
+    font-size: 12px;
+    font-family: "Courier New", Courier, monospace;
+  }
+
+  .footer {
+    display: none;
   }
 
   .footer p {
@@ -83,7 +102,6 @@
   }
 }
 
-/* md */
 @media (min-width: 768px) {
   .header {
     font-size: 3.7rem;
@@ -103,7 +121,6 @@
   }
 }
 
-/* lg */
 @media (min-width: 1024px) {
   .header {
     font-size: 5rem;
@@ -124,7 +141,6 @@
   }
 }
 
-/* xl */
 @media (min-width: 1280px) {
   .header {
     font-size: 9rem;
@@ -145,8 +161,7 @@
   }
 }
 
-/* 2xl */
-@media (min-width: 1600px) {
+@media (min-width: 1920px) {
   .container {
     display: flex;
     height: 95vh;

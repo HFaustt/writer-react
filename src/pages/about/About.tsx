@@ -20,6 +20,15 @@ export default function About() {
           aspernatur! Doloremque aliquid, velit rerum optio delectus quis
           dolores possimus a dolore quam repudiandae facilis ducimus nulla modi.
         </p>
+        <footer className={styles.mobileFooter}>
+          <img
+            src="/glasses.webp"
+            alt="glasses"
+            style={svgStyle(mediaQueries)}
+            className={styles.svg}
+          />
+          <p>H.Faust © {currentYear}. All rights reserved.</p>
+        </footer>
       </div>
       <div className={styles.rightHalf}>
         <div className={styles.imgContainer}>

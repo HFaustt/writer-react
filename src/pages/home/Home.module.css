@@ -208,7 +208,6 @@
   }
 }
 
-/* lg */
 @media (min-width: 1024px) {
   .leftHalf {
     position: absolute;
@@ -217,7 +216,6 @@
   }
 }
 
-/* xl */
 @media (min-width: 1280px) {
   .leftHalf {
     position: absolute;
@@ -232,7 +230,6 @@
   }
 }
 
-/* 2xl */
 @media (min-width: 1920px) {
   .divContainer {
     display: flex;
