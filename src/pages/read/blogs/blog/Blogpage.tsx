@@ -94,7 +94,7 @@ function BlogPage() {
         <h2 className={styles.title}>{blog.title}</h2>
 
         <div className={styles.userInfo}>
-          <img src="/blogPic.png" alt="user photo" width={40} height={40} />
+          <img src="/blogPic.webp" alt="user photo" width={40} height={40} />
           <div>
             <p>{blog.author}</p>
             <span>

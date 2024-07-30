@@ -12,6 +12,7 @@ function UserBio({
 }) {
   const navigate = useNavigate();
   const location = useLocation();
+  const isStoriesPage = location.pathname === "/read/stories";
   const queryParams = new URLSearchParams(location.search);
   const currentCategory = queryParams.get("category");
 
@@ -102,7 +103,7 @@ function UserBio({
       </div>
 
       <div className={styles.button}>
-        {location.pathname === "/read/stories" ? (
+        {isStoriesPage ? (
           <PostPageButton link="/read/blogs">My Blogs</PostPageButton>
         ) : (
           <PostPageButton link="/read/stories">My Stories</PostPageButton>
